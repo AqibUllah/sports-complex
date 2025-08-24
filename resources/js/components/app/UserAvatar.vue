@@ -5,8 +5,6 @@ import { ref } from 'vue';
 
 const page = usePage();
 const user = page.props.auth.user;
-const menuOpen = ref(false)
-
 
 const isOpen = ref(false)
 </script>
@@ -51,7 +49,6 @@ const isOpen = ref(false)
                 <Link
                     :href="route('logout')"
                     method="post"
-                    as="button"
                     class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
                     role="menuitem"
                 >
