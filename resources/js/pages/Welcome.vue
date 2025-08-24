@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Head } from '@inertiajs/vue3';
 import Header from '@/components/app/Header.vue';
 import VideoIntroSection from '@/sections/VideoIntroSection.vue';
 import FeaturesCategoriesSection from '@/sections/FeaturesCategoriesSection.vue';
