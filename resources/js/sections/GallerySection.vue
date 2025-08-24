@@ -54,7 +54,7 @@ const galleryItems = [
     {
         title: 'Football Turf 360° View',
         description: 'Explore our football turf in an immersive 360° panoramic view.',
-        url: 'https://kuula.co/share/12345', // Placeholder for 360° view (e.g., Kuula, Pano2VR)
+        url: 'https://discover.matterport.com/space/UAe6TFZAey5', // Placeholder for 360° view (e.g., Kuula, Pano2VR)
         href: 'booking.football',
         type: '360',
     },
