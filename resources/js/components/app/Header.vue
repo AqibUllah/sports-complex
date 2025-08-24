@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/vue3';
 import { ref, onMounted, onUnmounted } from 'vue';
 import MenuItem from '@/components/MenuItem.vue';
 import UserAvatar from '@/components/app/UserAvatar.vue';
+import { Button } from '@/components/ui/button';
 
 // const page = usePage();
 // const user = page.props.auth.user;
@@ -66,8 +67,8 @@ const menus = [
                         <UserAvatar />
                     </template>
                     <template v-else>
-                        <MenuItem href="login" name="Login" />
-                        <MenuItem href="register" name="Register" />
+                        <Button class="bg-primary-dark cursor-pointer" size="lg" @click="$inertia.visit(route('login'))">Login</Button>
+                        <Button variant="default" class="cursor-pointer" size="lg" @click="$inertia.visit(route('register'))">Register</Button>
                     </template>
                 </div>
 
@@ -102,8 +103,8 @@ const menus = [
                             <UserAvatar />
                         </template>
                         <template v-else>
-                            <MenuItem href="login" name="Login" @click="toggleMenu" />
-                            <MenuItem href="register" name="Register" @click="toggleMenu" />
+                            <Button class="bg-primary-dark cursor-pointer" size="lg" @click="$inertia.visit(route('login'))">Login</Button>
+                            <Button variant="default" class="cursor-pointer" size="lg" @click="$inertia.visit(route('register'))">Register</Button>
                         </template>
                     </nav>
                 </div>
