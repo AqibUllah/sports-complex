@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 import Header from '@/components/app/Header.vue';
 import VideoIntroSection from '@/sections/VideoIntroSection.vue';
 import FeaturesCategoriesSection from '@/sections/FeaturesCategoriesSection.vue';
@@ -11,10 +11,6 @@ import GallerySection from '@/sections/GallerySection.vue';
 </script>
 
 <template>
-    <Head title="Welcome">
-        <link rel="preconnect" href="https://rsms.me/" />
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-    </Head>
     <div class="flex min-h-screen flex-col items-center bg-[#FDFDFC] text-[#1b1b18] lg:justify-center dark:bg-[#0a0a0a]">
 
         <Header />
