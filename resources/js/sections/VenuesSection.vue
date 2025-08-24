@@ -208,11 +208,4 @@ const selectSport = (sport: string) => {
     img {
         transform-origin: center center;
     }
-    .card-hover {
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-    .card-hover:hover {
-        transform: scale(1.05) translateY(-4px);
-        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-    }
 </style>
