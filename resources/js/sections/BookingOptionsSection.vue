@@ -5,7 +5,7 @@ import cricketImage from '@images/categories/cricket.jpg';
 import gymImage from '@images/categories/gym.jpg';
 import swimmingImage from '@images/categories/swimming.jpg';
 import kidsImage from '@images/categories/kids-2.jpg'; // Assume you have an image for Kids Area
-import { Card,CardTitle,CardContent,CardHeader,CardFooter,CardAction } from '@/components/ui/card'; // Assume Kids Zone image exists
+import { Card,CardContent } from '@/components/ui/card'; // Assume Kids Zone image exists
 
 const facilities = [
     {
