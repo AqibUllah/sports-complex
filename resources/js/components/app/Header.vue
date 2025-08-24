@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { Link, usePage } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
 import { ref, onMounted, onUnmounted } from 'vue';
 import MenuItem from '@/components/MenuItem.vue';
 import UserAvatar from '@/components/app/UserAvatar.vue';
 
-const page = usePage();
-const user = page.props.auth.user;
+// const page = usePage();
+// const user = page.props.auth.user;
+
 const menuOpen = ref(false)
 
 const toggleMenu = () => {
@@ -56,7 +57,7 @@ const menus = [
 
                 <!-- Navigation Links (Desktop) -->
                 <nav class="hidden md:flex space-x-4">
-                    <MenuItem v-for="menu in menus" :href="menu.route" :url="menu.url" :name="menu.name" />
+                    <MenuItem v-for="menu in menus" :key="menu.name" :href="menu.route" :url="menu.url" :name="menu.name" />
                 </nav>
 
                 <!-- User Menu (Desktop) -->
@@ -96,7 +97,7 @@ const menus = [
             >
                 <div v-show="menuOpen" class="md:hidden">
                     <nav class="flex flex-col space-y-2 px-4 pb-4 pt-2 bg-gray-100 dark:bg-gray-800 rounded-md">
-                        <MenuItem v-for="menu in menus" :href="menu.route" :url="menu.url" :name="menu.name" />
+                        <MenuItem v-for="menu in menus" :key="menu.name" :href="menu.route" :url="menu.url" :name="menu.name" />
                         <template v-if="$page.props.auth.user">
                             <UserAvatar />
                         </template>
