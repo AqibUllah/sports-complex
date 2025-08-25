@@ -16,7 +16,7 @@ const venues = {
     Football: [
         {
             title: 'Football A',
-            price: 'Rs 800/hr',
+            price: 'RS800',
             rating: 4.7,
             description: 'Premium turf field with floodlights, ideal for competitive matches and training sessions.',
             image: footballImage,
@@ -24,7 +24,7 @@ const venues = {
         },
         {
             title: 'Football B',
-            price: 'Rs 800/hr',
+            price: 'RS800',
             rating: 4.5,
             description: 'Spacious field with high-quality turf, perfect for casual games and team practice.',
             image: footballImage,
@@ -32,7 +32,7 @@ const venues = {
         },
         {
             title: 'Football C',
-            price: 'Rs 1200/hr',
+            price: 'RS1200',
             rating: 4.8,
             description: 'Spacious field with high-quality turf, perfect for casual games and team practice.',
             image: footballImage,
@@ -42,7 +42,7 @@ const venues = {
     Cricket: [
         {
             title: 'Cricket Pitch A',
-            price: 'Rs 1500/hr',
+            price: 'RS1500',
             rating: 4.8,
             description: 'Professional-grade cricket pitch with excellent drainage and lighting.',
             image: cricketImage,
@@ -50,7 +50,7 @@ const venues = {
         },
         {
             title: 'Cricket Pitch B',
-            price: 'Rs 1000/hr',
+            price: 'RS1000',
             rating: 4.1,
             description: 'Professional-grade cricket pitch with excellent drainage and lighting.',
             image: cricketImage,
@@ -58,7 +58,7 @@ const venues = {
         },
         {
             title: 'Cricket Pitch C',
-            price: 'Rs 800/hr',
+            price: 'RS800',
             rating: 3.9,
             description: 'Professional-grade cricket pitch with excellent drainage and lighting.',
             image: cricketImage,
@@ -68,7 +68,7 @@ const venues = {
     Gym: [
         {
             title: 'Gym Studio A',
-            price: 'Rs 1100/hr',
+            price: 'RS1100',
             rating: 4.4,
             description: 'State-of-the-art gym with modern equipment and personal training options.',
             image: gymImage,
@@ -76,7 +76,7 @@ const venues = {
         },
         {
             title: 'Gym Studio B',
-            price: 'Rs 700/hr',
+            price: 'RS700',
             rating: 4.1,
             description: 'State-of-the-art gym with modern equipment and personal training options.',
             image: gymImage,
@@ -84,7 +84,7 @@ const venues = {
         },
         {
             title: 'Gym Studio C',
-            price: 'Rs 500/hr',
+            price: 'RS500',
             rating: 3.9,
             description: 'State-of-the-art gym with modern equipment and personal training options.',
             image: gymImage,
@@ -94,7 +94,7 @@ const venues = {
     Swimming: [
         {
             title: 'Swimming Pool A',
-            price: 'Rs 1800/hr',
+            price: 'RS1800',
             rating: 4.4,
             description: 'Olympic-sized pool with heated water and professional lifeguards.',
             image: swimmingImage,
@@ -102,7 +102,7 @@ const venues = {
         },
         {
             title: 'Swimming Pool B',
-            price: 'Rs 1300/hr',
+            price: 'RS1300',
             rating: 4.1,
             description: 'Olympic-sized pool with heated water and professional lifeguards.',
             image: swimmingImage,
@@ -110,7 +110,7 @@ const venues = {
         },
         {
             title: 'Swimming Pool C',
-            price: 'Rs 900/hr',
+            price: 'RS900',
             rating: 3.7,
             description: 'Olympic-sized pool with heated water and professional lifeguards.',
             image: swimmingImage,
@@ -158,46 +158,54 @@ const selectSport = (sport: string) => {
                 <Card
                     v-for="venue in venues[selectedSport]"
                     :key="venue.title"
-                    class="bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+                    class="bg-gray-100 backdrop-blur-lg shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300"
                     >
                     <CardContent>
-                        <img
-                            :src="venue.image"
-                            :alt="venue.title"
-                            class="w-200 h-32 object-cover"
-                        />
-                        <div class="p-4 sm:p-6">
-                            <h3 class="text-md sm:text-lg font-semibold mb-2">{{ venue.title }}</h3>
-                            <div class="flex items-center justify-between mb-2  border border-primary-dark px-2 rounded-md max-w-[60px]">
-                                <svg
-                                    class="w-5 h-5 text-yellow-400 mr-1"
-                                    fill="currentColor"
-                                    viewBox="0 0 20 20"
+                        <div class="flex h-55">
+                            <img
+                                :src="venue.image"
+                                :alt="venue.title"
+                                class="w-full h-66 object-cover"
+                            />
+                            <div class="w-full">
+                                <div class="p-2 flex-1">
+                                    <h3 class="text-md sm:text-lg font-semibold mb-2 text-gray-800">{{ venue.title }}</h3>
+                                    <div class="flex items-center justify-between mb-2  border border-primary-dark px-2 rounded-md max-w-[60px]">
+                                        <svg
+                                            class="w-5 h-5 text-yellow-400 mr-1"
+                                            fill="currentColor"
+                                            viewBox="0 0 20 20"
+                                        >
+                                            <path
+                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                                            />
+                                        </svg>
+                                        <span class="text-sm sm:text-base text-gray-500">{{ venue.rating }}</span>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-gray-600 mb-4 line-clamp-2">
+                                        {{ venue.description }}
+                                    </p>
+                                    <span class="md:text-4xl text-gray-600 sm:text-base mb-4">{{ venue.price }}<span class="text-lg">/hr</span></span>
+                                </div>
+                                <Link
+                                    :href="'#'"
+                                    class="bg-primary-dark w-full text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-br-md hover:bg-primary-light text-sm sm:text-base inline-block"
                                 >
-                                    <path
-                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                                    />
-                                </svg>
-                                <span class="text-sm sm:text-base">{{ venue.rating }}</span>
+                                    Book Now
+                                </Link>
                             </div>
-                            <p class="text-sm sm:text-base text-gray-100 mb-4 line-clamp-2">
-                                {{ venue.description }}
-                            </p>
-                            <p class="text-sm sm:text-base font-semibold text-primary-dark mb-4">
-                                {{ venue.price }}
-                            </p>
                         </div>
                     </CardContent>
-                    <CardFooter class="mb-4">
-                        <CardAction>
-                            <Link
-                                :href="'#'"
-                                class="bg-primary-dark text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-primary-light text-sm sm:text-base inline-block"
-                            >
-                                Book Now
-                            </Link>
-                        </CardAction>
-                    </CardFooter>
+<!--                    <CardFooter class="mb-4">-->
+<!--                        <CardAction>-->
+<!--                            <Link-->
+<!--                                :href="'#'"-->
+<!--                                class="bg-primary-dark text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-primary-light text-sm sm:text-base inline-block"-->
+<!--                            >-->
+<!--                                Book Now-->
+<!--                            </Link>-->
+<!--                        </CardAction>-->
+<!--                    </CardFooter>-->
                 </Card>
             </div>
         </div>

@@ -49,48 +49,48 @@ const facilities = [
 </script>
 
 <template>
-    <section class="py-12 w-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
-        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Heading -->
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold sm:text-4xl md:text-4xl">Booking Options</h1>
-                <p class="mt-2 md:text-lg sm:text-sm">
-                    Choose your preferred facility and booking type to get started.
-                </p>
-            </div>
+<!--    <section class="py-12 w-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">-->
+<!--        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">-->
+<!--            &lt;!&ndash; Heading &ndash;&gt;-->
+<!--            <div class="text-center mb-8">-->
+<!--                <h1 class="text-3xl font-bold sm:text-4xl md:text-4xl">Booking Options</h1>-->
+<!--                <p class="mt-2 md:text-lg sm:text-sm">-->
+<!--                    Choose your preferred facility and booking type to get started.-->
+<!--                </p>-->
+<!--            </div>-->
 
-            <!-- Facility Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card v-for="facility in facilities"
-                      :key="facility.title"
-                      class="bg-white/10 backdrop-blur-lg shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300"
-                >
-                    <CardContent>
-                        <img
-                            :src="facility.image"
-                            :alt="facility.title"
-                            class="w-full h-32 object-cover"
-                        />
-                        <div class="p-4 sm:p-6">
-                            <h3 class="text-lg sm:text-xl font-semibold mb-2">{{ facility.title }}</h3>
-                            <p class="text-xs text-primary-dark font-bold sm:text-base text-gray-100 mb-4">
-                                {{ facility.bookingType }}
-                            </p>
-                            <Link
-                                :href="'#'"
-                                class="bg-primary-dark cursor-pointer text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-primary-light text-sm sm:text-base inline-block"
-                            >
-                                Book Now
-                            </Link>
-                        </div>
-                    </CardContent>
-                </Card>
-            </div>
-        </div>
-    </section>
+<!--            &lt;!&ndash; Facility Cards &ndash;&gt;-->
+<!--            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">-->
+<!--                <Card v-for="facility in facilities"-->
+<!--                      :key="facility.title"-->
+<!--                      class="bg-white/10 backdrop-blur-lg shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300"-->
+<!--                >-->
+<!--                    <CardContent>-->
+<!--                        <img-->
+<!--                            :src="facility.image"-->
+<!--                            :alt="facility.title"-->
+<!--                            class="w-full h-32 object-cover"-->
+<!--                        />-->
+<!--                        <div class="p-4 sm:p-6">-->
+<!--                            <h3 class="text-lg sm:text-xl font-semibold mb-2">{{ facility.title }}</h3>-->
+<!--                            <p class="text-xs text-primary-dark font-bold sm:text-base text-gray-100 mb-4">-->
+<!--                                {{ facility.bookingType }}-->
+<!--                            </p>-->
+<!--                            <Link-->
+<!--                                :href="'#'"-->
+<!--                                class="bg-primary-dark cursor-pointer text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md hover:bg-primary-light text-sm sm:text-base inline-block"-->
+<!--                            >-->
+<!--                                Book Now-->
+<!--                            </Link>-->
+<!--                        </div>-->
+<!--                    </CardContent>-->
+<!--                </Card>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <!-- Booking Options Section -->
-    <section class="py-12 w-full">
+    <section class="py-12 w-full bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Heading -->
             <div class="text-center mb-12">
