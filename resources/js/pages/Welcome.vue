@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Header from '@/components/app/Header.vue';
+import Footer from '@/components/app/Footer.vue';
 import VideoIntroSection from '@/sections/VideoIntroSection.vue';
 import FeaturesCategoriesSection from '@/sections/FeaturesCategoriesSection.vue';
 import VenuesSection from '@/sections/VenuesSection.vue';
@@ -33,6 +34,8 @@ import GallerySection from '@/sections/GallerySection.vue';
         <GallerySection />
 
         <div class="hidden h-14.5 lg:block"></div>
+
+        <Footer />
 
     </div>
 </template>
