@@ -3,7 +3,11 @@
 import gymImage from '@images/categories/gym.jpg';
 import swimmingImage from '@images/categories/swimming.jpg';
 import { Card,CardContent,CardFooter,CardAction } from '@/components/ui/card'; // Assume Kids Zone image exists
-
+import { ref } from 'vue';
+const selectedFacility = ref('Gym');
+const selectFacility = (facility:any) => {
+    selectedFacility.value = facility;
+};
 const plans = [
     {
         facility: 'Gym',
@@ -93,9 +97,25 @@ const plans = [
                 </p>
             </div>
 
+            <div class="flex justify-center space-x-2 sm:space-x-4 mb-8">
+                <button
+                    v-for="facility in ['Gym', 'Swimming']"
+                    :key="facility"
+                    @click="selectFacility(facility)"
+                    :class="[
+                    'px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 text-sm sm:text-base md:text-lg font-semibold rounded-md transition-colors duration-200',
+                        selectedFacility === facility
+                          ? 'bg-primary-dark text-white'
+                          : 'bg-transparent border border-primary-dark text-primary-dark hover:bg-primary-dark/10',
+                      ]"
+                    >
+                    {{ facility }}
+                </button>
+            </div>
+
             <!-- Pricing Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Card v-for="plan in plans"
+                <Card v-for="plan in plans.filter(p => p.facility === selectedFacility)"
                       :key="`${plan.facility}-${plan.type}`"
                     class="bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
                     <CardContent>

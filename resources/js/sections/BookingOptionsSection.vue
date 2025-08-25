@@ -125,7 +125,7 @@ const facilities = [
 
 
                 <!-- Special Offer Card -->
-                <div class="booking-card bg-gradient-to-r from-primary to-primary-dark rounded-xl p-6 shadow-sm text-white">
+                <div class="booking-card bg-gradient-to-r from-primary to-primary-dark rounded-xl p-6 shadow-sm ">
                     <div class="flex items-start justify-between mb-4">
                         <div class="booking-icon bg-white bg-opacity-20 p-3 rounded-lg">
                             <i class="fas fa-star text-xl"></i>
@@ -134,10 +134,10 @@ const facilities = [
                         </div>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Special Package</h3>
-                    <p class="text-white text-opacity-80 text-sm mb-4">Get access to multiple facilities with our premium membership</p>
+                    <p class="text-opacity-80 text-sm mb-4">Get access to multiple facilities with our premium membership</p>
                     <div class="flex items-center justify-between">
                         <span class="font-medium">All Facilities Access</span>
-                        <button class="bg-white text-primary-dark px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition-colors">
+                        <button class="bg-white cursor-pointer text-primary-dark px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition-colors">
                             Learn More
                         </button>
                     </div>
