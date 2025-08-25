@@ -23,7 +23,7 @@ import 'animate.css';
                 >
                     <!-- Heading -->
                     <h2
-                        class="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-gray-100 uppercase tracking-wide"
+                        class="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-gray-800 uppercase tracking-wide"
                     >
                         Welcome to
                     </h2>
@@ -33,7 +33,7 @@ import 'animate.css';
                         Uptown Arena Sports Complex
                     </h1>
                     <p
-                        class="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-gray-100 max-w-full sm:max-w-md md:max-w-lg"
+                        class="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 max-w-full sm:max-w-md md:max-w-lg"
                     >
                         Your ultimate destination for sports and fitness. Book facilities, join memberships, and explore our categories.
                     </p>
