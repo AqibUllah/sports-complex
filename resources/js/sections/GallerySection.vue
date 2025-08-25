@@ -86,14 +86,15 @@ const galleryItems = [
                 :space-between="20"
                 :autoplay="{ delay: 5000, disableOnInteraction: false }"
                 :loop="true"
+                :rewind="true"
                 :navigation="true"
                 :pagination="{ clickable: true }"
                 :modules="modules"
                 :breakpoints="{
-          640: { slidesPerView: 1, spaceBetween: 20 },
-          768: { slidesPerView: 2, spaceBetween: 20 },
-          1024: { slidesPerView: 3, spaceBetween: 30 },
-        }"
+                    640: { slidesPerView: 1, spaceBetween: 20 },
+                    768: { slidesPerView: 2, spaceBetween: 20 },
+                    1024: { slidesPerView: 3, spaceBetween: 30 },
+                }"
             >
                 <swiper-slide v-for="item in galleryItems" :key="item.title">
                     <Card class="bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl overflow-hidden">
