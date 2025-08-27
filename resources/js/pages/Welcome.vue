@@ -7,6 +7,7 @@ import VenuesSection from '@/sections/VenuesSection.vue';
 import BookingOptionsSection from '@/sections/BookingOptionsSection.vue';
 import MembershipAndPricingSection from '@/sections/MembershipAndPricingSection.vue';
 import GallerySection from '@/sections/GallerySection.vue';
+import FAQSection from '@/sections/FAQSection.vue';
 
 </script>
 
@@ -32,6 +33,9 @@ import GallerySection from '@/sections/GallerySection.vue';
 
         <!-- Sixth Section: Gallery Section -->
         <GallerySection />
+
+        <!-- Seventh Section: Gallery Section -->
+        <FAQSection />
 
         <div class="hidden h-14.5 lg:block"></div>
 
