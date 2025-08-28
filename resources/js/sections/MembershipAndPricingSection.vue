@@ -376,22 +376,22 @@ function calculateCustomPrice() {
     <div id="app" class="container mx-auto max-w-7xl">
         <!-- Header -->
         <header class="text-center mb-12">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-200 dark:text-gray-800 mb-4">Premium Sports Club Memberships</h1>
-        <p class="text-xl text-gray-400 dark:text-gray-700 max-w-4xl mx-auto">Choose from our variety of facilities and membership options designed to fit your lifestyle and fitness goals.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-200 dark:text-gray-800 mb-4">Premium Sports Club Memberships</h1>
+            <p class="text-xl text-gray-400 dark:text-gray-700 max-w-4xl mx-auto">Choose from our variety of facilities and membership options designed to fit your lifestyle and fitness goals.</p>
         </header>
 
         <!-- Category Tabs -->
-        <div class="flex flex-wrap justify-center gap-4 mb-12 border-b pb-4">
-        <button
-            v-for="(category, index) in categories"
-            :key="index"
-            @click="activeCategory = index"
-            :class="{'tab-active': activeCategory === index}"
-            class="px-6 py-3 text-lg font-medium rounded-lg hover:tab-active transition-all duration-300 hover:text-primary-dark cursor-pointer"
-        >
-            <i :class="category.icon" class="mr-2"></i>
-            {{ category.name }}
-        </button>
+        <div class="flex flex-wrap justify-center gap-4 mb-12 border-b border-gray-800 pb-4">
+            <button
+                v-for="(category, index) in categories"
+                :key="index"
+                @click="activeCategory = index"
+                :class="{'tab-active': activeCategory === index}"
+                class="px-6 py-3 text-lg font-medium rounded-lg hover:tab-active transition-all duration-300 text-gray-200 hover:text-primary-dark cursor-pointer"
+            >
+                <i :class="category.icon" class="mr-2"></i>
+                {{ category.name }}
+            </button>
         </div>
 
         <!-- Membership Cards -->
@@ -625,7 +625,7 @@ function calculateCustomPrice() {
     .tab-active:after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: 0px;
       left: 0;
       right: 0;
       height: 3px;
