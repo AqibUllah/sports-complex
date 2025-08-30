@@ -95,7 +95,7 @@ const facilities = [
             <!-- Heading -->
             <div class="text-center mb-12">
                 <h1 class="text-3xl font-bold sm:text-4xl md:text-5xl text-gray-100">Booking Options</h1>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
                     Choose your preferred facility and booking type to get started.
                 </p>
             </div>
