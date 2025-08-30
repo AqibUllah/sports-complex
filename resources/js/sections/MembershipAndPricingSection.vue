@@ -375,12 +375,6 @@ function calculateCustomPrice() {
 </template>
 
 <style scoped>
-    /* macOS-like translucent effect */
-    .bg-white\/10 {
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-    }
     img {
         transform-origin: center center;
     }
@@ -392,7 +386,7 @@ function calculateCustomPrice() {
     .tab-active:after {
       content: '';
       position: absolute;
-      bottom: 0px;
+      bottom: 0;
       left: 0;
       right: 0;
       height: 3px;

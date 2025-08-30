@@ -5,8 +5,6 @@ import cricketImage from '@images/categories/cricket.jpg';
 import gymImage from '@images/categories/gym.jpg';
 import swimmingImage from '@images/categories/swimming.jpg';
 import kidsImage from '@images/categories/kids-2.jpg'; // Assume you have an image for Kids Area
-import { Card,CardContent } from '@/components/ui/card';
-import { Link } from '@inertiajs/vue3'; // Assume Kids Zone image exists
 import { Icon } from "@iconify/vue";
 
 const facilities = [
