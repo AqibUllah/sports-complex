@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class MembershipPlainFeature extends Model
+class MembershipPlanFeature extends Model
 {
     use HasFactory;
 
@@ -18,6 +18,6 @@ class MembershipPlainFeature extends Model
 
     public function membershipPlan(): BelongsTo
     {
-        return $this->belongsTo(MembershipPlain::class, 'membership_plan_id');
+        return $this->belongsTo(MembershipPlan::class, 'membership_plan_id');
     }
 }

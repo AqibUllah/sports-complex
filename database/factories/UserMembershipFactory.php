@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\MembershipPlain;
+use App\Models\MembershipPlan;
 use App\Models\User;
 use App\Models\UserMembership;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -23,7 +23,7 @@ class UserMembershipFactory extends Factory
             'updated_at' => Carbon::now(),
 
             'user_id' => User::factory(),
-            'membership_plan_id' => MembershipPlain::factory(),
+            'membership_plan_id' => MembershipPlan::factory(),
         ];
     }
 }

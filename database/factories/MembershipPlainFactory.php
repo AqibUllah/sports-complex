@@ -3,13 +3,13 @@
 namespace Database\Factories;
 
 use App\Models\Facility;
-use App\Models\MembershipPlain;
+use App\Models\MembershipPlan;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
 class MembershipPlainFactory extends Factory
 {
-    protected $model = MembershipPlain::class;
+    protected $model = MembershipPlan::class;
 
     public function definition(): array
     {

@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Categories\Schemas;
 
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -21,8 +22,12 @@ class CategoryForm
                 ->hint('https://tailscan.com/gradients'),
                 TextInput::make('icon')
                 ->hint('https://icon-sets.iconify.design/'),
-                FileUpload::make('image_url')
-                    ->image(),
+                SpatieMediaLibraryFileUpload::make('image')
+                ->name('Categories')
+                ->disk('public')
+//                ->directory('assets/images')
+                ->conversion('thumb')
+                ->customProperties(['filename_prefix' => 'categories/'])
             ]);
     }
 }

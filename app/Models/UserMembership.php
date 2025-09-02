@@ -26,7 +26,7 @@ class UserMembership extends Model
 
     public function membershipPlan(): BelongsTo
     {
-        return $this->belongsTo(MembershipPlain::class, 'membership_plan_id');
+        return $this->belongsTo(MembershipPlan::class, 'membership_plan_id');
     }
 
     protected function casts(): array

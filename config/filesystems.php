@@ -47,6 +47,13 @@ return [
             'report' => false,
         ],
 
+        'client' => [
+            'driver' => 'local',
+            'root' => resource_path('js/assets/images'),
+            'url' => env('APP_URL').'/assets/images',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
