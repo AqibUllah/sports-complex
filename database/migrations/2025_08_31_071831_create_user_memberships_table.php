@@ -11,9 +11,9 @@ return new class extends Migration {
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('membership_plan_id');
-            $table->decimal('price_paid');
-            $table->timestamp('valid_from');
-            $table->timestamp('valid_until');
+            $table->decimal('price_paid',10,2);
+            $table->timestamp('valid_from')->useCurrent();
+            $table->timestamp('valid_until')->nullable();
             $table->json('custom_details')->nullable();
             $table->enum('status',['active', 'expired', 'cancelled']);
             $table->timestamps();

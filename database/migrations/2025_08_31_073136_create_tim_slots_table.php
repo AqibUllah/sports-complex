@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('tim_slots', function (Blueprint $table) {
+        Schema::create('time_slots', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('facility_id')->constrained('facilities', 'facility_id')->onDelete('cascade');
+            $table->foreignId('facility_id')->constrained()->onDelete('cascade');
 
             // Timing of the slot
             $table->dateTime('start_time');
@@ -38,6 +38,6 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('tim_slots');
+        Schema::dropIfExists('time_slots');
     }
 };

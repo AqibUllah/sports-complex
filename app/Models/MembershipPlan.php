@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class MembershipPlain extends Model
+class MembershipPlan extends Model
 {
     use HasFactory;
 
@@ -30,7 +30,7 @@ class MembershipPlain extends Model
 
     public function membership_plain_features(): HasMany
     {
-        return $this->hasMany(MembershipPlainFeature::class, 'membership_plan_id');
+        return $this->hasMany(MembershipPlanFeature::class, 'membership_plan_id');
     }
 
     protected function casts(): array
