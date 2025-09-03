@@ -25,7 +25,7 @@ class MembershipPlanForm
                     ->numeric()
                     ->prefix('$'),
                 Select::make('duration_type')
-                    ->options(DurationType::class)
+                    ->options( DurationType::class)
                     ->default(null),
                 TextInput::make('duration_value')
                     ->numeric()
