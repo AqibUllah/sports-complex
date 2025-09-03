@@ -59,7 +59,7 @@ class Category extends Model implements HasMedia
             'id' => $media->id,
             'url' => $media->getUrl(),
             'thumb' => $media->getUrl('thumb'), // if you defined conversions
-        ]);
+        ])->toArray();
     }
 
     // Relations
