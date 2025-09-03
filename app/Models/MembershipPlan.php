@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\DurationType;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -37,6 +38,7 @@ class MembershipPlan extends Model
     {
         return [
             'status' => 'boolean',
+            'duration_type' => DurationType::class
         ];
     }
 }
