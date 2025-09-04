@@ -1,35 +1,25 @@
 <?php
 
-namespace App\Filament\Resources\Facilities\Tables;
+namespace App\Filament\Resources\GalleryMedia\Tables;
 
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 
-class FacilitiesTable
+class GalleryMediaTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('name')
+                TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('capacity')
-                    ->numeric()
-                    ->sortable(),
+                TextColumn::make('media_type'),
                 TextColumn::make('category.name')
                     ->searchable(),
-                TextColumn::make('price_per_hour')
-                    ->numeric()
-                    ->sortable(),
-                SpatieMediaLibraryImageColumn::make('image_url')
-                    ->label('Image')
-                    ->conversion('thumb'),
                 IconColumn::make('status')
                     ->boolean(),
                 TextColumn::make('created_at')
@@ -46,7 +36,6 @@ class FacilitiesTable
             ])
             ->recordActions([
                 EditAction::make(),
-                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([

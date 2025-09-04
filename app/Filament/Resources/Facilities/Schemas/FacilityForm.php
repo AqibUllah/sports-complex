@@ -7,6 +7,7 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 
 class FacilityForm
 {
@@ -30,10 +31,14 @@ class FacilityForm
                 TextInput::make('price_per_hour')
                     ->required()
                     ->numeric(),
+                SpatieMediaLibraryFileUpload::make('image')
+                    ->name('facilities')
+                    ->disk('public'),
                 Textarea::make('location_details')
                     ->default(null)
                     ->columnSpanFull(),
                 Toggle::make('status')
+                    ->default(true)
                     ->required(),
             ]);
     }

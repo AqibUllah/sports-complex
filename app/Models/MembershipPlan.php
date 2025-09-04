@@ -22,6 +22,7 @@ class MembershipPlan extends Model
         'duration_value',
         'details',
         'status',
+        'is_popular',
     ];
 
     public function facility(): BelongsTo
@@ -29,7 +30,7 @@ class MembershipPlan extends Model
         return $this->belongsTo(Facility::class);
     }
 
-    public function membership_plain_features(): HasMany
+    public function features(): HasMany
     {
         return $this->hasMany(MembershipPlanFeature::class, 'membership_plan_id');
     }
@@ -38,7 +39,8 @@ class MembershipPlan extends Model
     {
         return [
             'status' => 'boolean',
-            'duration_type' => DurationType::class
+            'duration_type' => DurationType::class,
+            'services' => 'array'
         ];
     }
 }

@@ -15,11 +15,13 @@ return new class extends Migration {
             $table->enum('duration_type',['per_visit','monthly','yearly','custom'])->nullable();
             $table->integer('duration_value')->nullable(); // (NULL if per_visit, else number of days/months)
             $table->text('details')->nullable();
+            $table->json('services')->nullable();
             $table->integer('max_visits')->nullable();
             $table->integer('max_visits_per_day')->nullable();
             $table->integer('max_visits_per_month')->nullable();
             $table->integer('max_visits_per_year')->nullable();
-            $table->boolean('status');
+            $table->boolean('is_popular')->default(false);
+            $table->boolean('status')->default(true);
             $table->timestamps();
 
             // column indexes for better query performance:

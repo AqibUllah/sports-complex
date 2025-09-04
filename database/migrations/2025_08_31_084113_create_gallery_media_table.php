@@ -11,8 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
-            $table->text('file_path');
-            $table->enum('media_type',['image', 'video']);
             $table->foreignId('category_id');
             $table->boolean('status')->default(true);
             $table->timestamps();

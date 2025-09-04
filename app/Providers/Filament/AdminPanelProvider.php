@@ -18,6 +18,9 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Facades\Filament;
+use Filament\Navigation\NavigationGroup;
+use Filament\Navigation\NavigationItem;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -27,6 +30,8 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
+            ->spa()
+            ->sidebarCollapsibleOnDesktop()
             ->brandName('Uptown Arena Admin')
             ->brandLogo(asset('assets/images/logos/1.png'))
             ->login()
@@ -58,5 +63,27 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+    }
+
+    public function boot(): void
+    {
+        Filament::serving(function () {
+            // Register navigation group
+            Filament::registerNavigationGroups([
+                NavigationGroup::make()
+                    ->label('Reports')
+                    ->icon('heroicon-o-chart-bar')
+                    ->collapsed(),
+            ]);
+
+            // Register custom navigation item
+            // Filament::registerNavigationItems([
+            //     NavigationItem::make('Analytics')
+            //         ->url('https://filament.pirsch.io', shouldOpenInNewTab: true)
+            //         ->icon('heroicon-o-presentation-chart-line')
+            //         ->group('Reports')
+            //         ->sort(1),
+            // ]);
+        });
     }
 }

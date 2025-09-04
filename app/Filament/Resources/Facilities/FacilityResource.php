@@ -18,7 +18,7 @@ class FacilityResource extends Resource
 {
     protected static ?string $model = Facility::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCubeTransparent;
 
     protected static ?string $recordTitleAttribute = 'name';
 

@@ -13,17 +13,20 @@ class TimeSlotFactory extends Factory
 
     public function definition(): array
     {
-        return [
-            'start_time' => Carbon::now(),
-            'end_time' => Carbon::now(),
-            'max_capacity' => $this->faker->randomNumber(),
-            'available_spots' => $this->faker->randomNumber(),
-            'price' => $this->faker->word(),
-            'is_available' => $this->faker->boolean(),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+        $startTime = $this->faker->dateTimeBetween('now', '+30 days');
+        $endTime = clone $startTime;
+        $endTime->modify('+2 hours');
 
-            'facility_id' => Facility::factory(),
+        $maxCapacity = $this->faker->numberBetween(10, 100);
+
+        return [
+            'facility_id' => Facility::inRandomOrder()->first()->id ?? Facility::factory()->create()->id,
+            'start_time' => $startTime,
+            'end_time' => $endTime,
+            'max_capacity' => $maxCapacity,
+            'available_spots' => $this->faker->numberBetween(0, $maxCapacity),
+            'price' => $this->faker->randomFloat(2, 10, 200),
+            'is_available' => $this->faker->boolean(80), // 80% chance of being available
         ];
     }
 }
