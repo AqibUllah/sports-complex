@@ -24,7 +24,9 @@ class GalleryMediaForm
                     ->required(),
                 Textarea::make('description')
                     ->columnSpanFull(),
-                SpatieMediaLibraryFileUpload::make('images')
+                SpatieMediaLibraryFileUpload::make('image')
+                    ->collection('images')
+                    ->reorderable()
                     ->name('gallery')
                     ->disk('public')
                     ->multiple()

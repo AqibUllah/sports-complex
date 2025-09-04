@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Filament\Forms\Components\RichEditor\Models\Concerns\InteractsWithRichContent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -9,10 +10,12 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Spatie\Image\Enums\Fit;
+use Filament\Forms\Components\RichEditor\FileAttachmentProviders\SpatieMediaLibraryFileAttachmentProvider;
+use Filament\Forms\Components\RichEditor\Models\Contracts\HasRichContent;
 
-class GalleryMedia extends Model implements HasMedia
+class GalleryMedia extends Model implements HasMedia, HasRichContent
 {
-    use HasFactory, InteractsWithMedia;
+    use HasFactory, InteractsWithMedia, InteractsWithRichContent;
 
     protected $fillable = [
         'title',
@@ -23,9 +26,18 @@ class GalleryMedia extends Model implements HasMedia
 
     protected $appends = ['image_url','all_images'];
 
+    public function setUpRichContent(): void
+    {
+        $this->registerRichContent('content')
+            ->fileAttachmentProvider(
+                SpatieMediaLibraryFileAttachmentProvider::make()
+                    ->collection('content-file-attachments'),
+            );
+    }
+
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('images')
+        $this->addMediaCollection('image')
             ->useDisk('public');
     }
 
@@ -41,7 +53,7 @@ class GalleryMedia extends Model implements HasMedia
 
     public function getImageUrlAttribute():string
     {
-        return $this->getFirstMediaUrl('images','thumb');
+        return $this->getFirstMediaUrl('image','thumb');
     }
 
     /**
@@ -51,7 +63,7 @@ class GalleryMedia extends Model implements HasMedia
      */
     public function getAllImagesAttribute(): array
     {
-        return $this->getMedia('images')->map(fn($media) => [
+        return $this->getMedia('image')->map(fn($media) => [
             'id' => $media->id,
             'url' => $media->getUrl(),
             'thumb' => $media->getUrl('thumb'), // if you defined conversions
