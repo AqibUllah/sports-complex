@@ -3,9 +3,11 @@
 namespace App\Filament\Resources\GalleryMedia\Tables;
 
 use Filament\Actions\BulkActionGroup;
+use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
@@ -17,9 +19,13 @@ class GalleryMediaTable
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
-                TextColumn::make('media_type'),
                 TextColumn::make('category.name')
                     ->searchable(),
+                SpatieMediaLibraryImageColumn::make('image')
+                    ->circular()
+                    ->limit(2)
+                    ->limitedRemainingText()
+                    ->collection('images'),
                 IconColumn::make('status')
                     ->boolean(),
                 TextColumn::make('created_at')
@@ -36,6 +42,7 @@ class GalleryMediaTable
             ])
             ->recordActions([
                 EditAction::make(),
+                DeleteAction::make()
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
