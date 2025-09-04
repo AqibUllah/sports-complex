@@ -24,7 +24,7 @@ class Category extends Model implements HasMedia
         'icon',
     ];
 
-    protected $appends = ['image_url','all_images'];
+    protected $appends = ['image_url'];
 
     public function registerMediaCollections(): void
     {
