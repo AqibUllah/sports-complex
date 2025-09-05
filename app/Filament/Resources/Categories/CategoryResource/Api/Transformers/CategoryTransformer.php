@@ -18,6 +18,15 @@ class CategoryTransformer extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->resource->toArray();
+        // return $this->resource->toArray();
+
+        return [
+            'name'  => $this->resource->name,
+            'description' =>  $this->resource->description,
+            'slug' =>  $this->resource->slug,
+            'color' =>  $this->resource->color,
+            'icon' =>  $this->resource->icon,
+            'image_url' =>  $this->resource->getFirstMediaUrl(),
+        ];
     }
 }
