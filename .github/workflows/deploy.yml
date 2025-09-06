@@ -107,7 +107,7 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIAVTE_KEY }}
+#          key: ${{ secrets.SSH_PRIAVTE_KEY }}
 #          password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.PORT }}
 #          port: 22
