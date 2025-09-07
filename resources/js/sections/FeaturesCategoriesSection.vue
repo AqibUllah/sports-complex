@@ -54,7 +54,7 @@ const items = [
 </script>
 
 <template>
-    <section class="py-12 w-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white">
+    <section class="py-12 w-full bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white" id="features_and_categories">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Heading -->
             <div class="text-center mb-8">

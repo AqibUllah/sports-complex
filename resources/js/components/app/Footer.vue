@@ -1,14 +1,11 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-
-
-
+import { Icon } from "@iconify/vue";
 </script>
 
 <template>
     <!-- Footer Preview Container -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-4xl font-bold text-center mb-8 text-gray-100">Uptown Arena Sports Complex Footer</h2>
+        <h2 class="text-4xl font-bold text-center mb-8 text-gray-100">Uptown Arena Sports Complex</h2>
 
         <!-- Footer Component -->
         <footer class="bg-gray-900 footer-gradient text-white rounded-xl shadow-2xl overflow-hidden">
@@ -37,21 +34,15 @@ import { Link } from '@inertiajs/vue3';
                             <div class="bg-orange-500 h-10 w-10 rounded-lg flex items-center justify-center mr-3">
                                 <i class="fas fa-basketball-ball text-white text-xl"></i>
                             </div>
-                            <span class="text-xl font-bold">UPTOWN ARENA</span>
+                            <span class="text-xl font-bold">UPTOWN SPORTS ARENA COMPLEX</span>
                         </div>
                         <p class="text-gray-300 mb-6">Premier sports complex offering state-of-the-art facilities for basketball, volleyball, soccer, and more. Your destination for sports excellence.</p>
                         <div class="flex space-x-4">
-                            <a href="#" class="social-icon bg-blue-800 h-10 w-10 rounded-full flex items-center justify-center">
-                                <i class="fab fa-facebook-f"></i>
+                            <a href="https://www.facebook.com/UptownSportsArenaPk" target="_blank" class="rounded-full flex items-center justify-center">
+                                <Icon icon="ic:baseline-facebook" width="40" />
                             </a>
-                            <a href="#" class="social-icon bg-blue-400 h-10 w-10 rounded-full flex items-center justify-center">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon bg-red-600 h-10 w-10 rounded-full flex items-center justify-center">
-                                <i class="fab fa-youtube"></i>
+                            <a href="https://www.instagram.com/uptown_sportsarena" target="_blank" class="rounded-full flex items-center justify-center">
+                                <Icon icon="skill-icons:instagram" width="40"></Icon>
                             </a>
                         </div>
                     </div>
@@ -60,12 +51,13 @@ import { Link } from '@inertiajs/vue3';
                     <div>
                         <h4 class="text-lg font-semibold mb-6 relative pb-2 after:absolute after:left-0 after:bottom-0 after:h-1 after:w-10 after:bg-orange-500">Quick Links</h4>
                         <ul class="space-y-3">
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Home</a></li>
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Book a Court</a></li>
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Memberships</a></li>
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Features & Categories</a></li>
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Gallery</a></li>
-                            <li><a href="#" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Contact Us</a></li>
+                            <li><a href="#home" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Home</a></li>
+                            <li><a href="#venues" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Venues</a></li>
+                            <li><a href="#features_and_categories" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Features & Categories</a></li>
+                            <li><a href="#gallery" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Gallery</a></li>
+                            <li><a href="#booking_options" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Booking Options</a></li>
+                            <li><a href="#membership_and_pricing" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Membership & Pricing</a></li>
+                            <li><a href="#faq" class="footer-link text-gray-300 flex items-center"><i class="fas fa-chevron-right text-orange-500 mr-2 text-xs"></i> Faqs</a></li>
                         </ul>
                     </div>
 
@@ -89,19 +81,23 @@ import { Link } from '@inertiajs/vue3';
                         <ul class="space-y-4">
                             <li class="flex">
                                 <i class="fas fa-map-marker-alt text-orange-500 mt-1 mr-3"></i>
-                                <span class="text-gray-300">123 Sports Avenue, Uptown District, City 10001</span>
+                                <span class="text-gray-300">Opposite Airport Runway, Railway Line, Abdara, Peshawar</span>
                             </li>
                             <li class="flex">
                                 <i class="fas fa-phone-alt text-orange-500 mt-1 mr-3"></i>
-                                <span class="text-gray-300">(555) 123-4567</span>
+                                <span class="text-gray-300">+92 332 1999197</span>
                             </li>
                             <li class="flex">
                                 <i class="fas fa-envelope text-orange-500 mt-1 mr-3"></i>
-                                <span class="text-gray-300">info@uptownarena.com</span>
+                                <span class="text-gray-300">uptownsportsarena@gmail.com</span>
                             </li>
                             <li class="flex">
                                 <i class="fas fa-clock text-orange-500 mt-1 mr-3"></i>
-                                <span class="text-gray-300">Mon-Fri: 5am-11pm<br>Sat-Sun: 5am-12am</span>
+                                <span class="text-gray-300">
+                                    Gym: 5:00 AM - 11:00 PM (Daily)<br>
+                                    Sports: 6:00 AM - 10:00 PM<br>
+                                    Café: 7:00 AM - 9:00 PM
+                                </span>
                             </li>
                         </ul>
                     </div>

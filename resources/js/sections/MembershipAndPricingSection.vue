@@ -218,7 +218,7 @@ function calculateCustomPrice() {
 
 <template>
 
-    <section class="container mx-auto max-w-7xl py-16">
+    <section class="container mx-auto max-w-7xl py-16" id="membership_and_pricing">
         <!-- Header -->
         <header class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-4">Premium Sports Club Memberships</h1>

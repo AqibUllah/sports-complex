@@ -32,7 +32,7 @@ const faqs = ref([
 
 <template>
     <!-- FAQ Section -->
-    <section class="max-w-6xl mx-auto py-16">
+    <section class="max-w-6xl mx-auto py-16" id="faq">
         <h2 class="text-4xl font-bold text-center text-gray-200 mb-8">Frequently Asked Questions</h2>
         <div class="space-y-4">
             <div v-for="(faq, index) in faqs" :key="index" class="bg-white rounded-lg shadow p-6">

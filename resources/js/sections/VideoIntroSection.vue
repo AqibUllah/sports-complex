@@ -5,7 +5,7 @@ import 'animate.css';
 </script>
 
 <template>
-    <section class="relative bg-primary-50">
+    <section class="relative bg-primary-50" id="home">
         <div class="">
                 <video
                 autoplay

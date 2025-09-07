@@ -16,7 +16,7 @@ const props = defineProps<{
 
 <template>
     <Link
-        :href="route(props.href)"
+        :href="props.url"
         class="hover:text-primary-light dark:hover:text-primary-dark hover:text-white hover:transition-colors px-3 py-2 rounded-md text-sm font-medium"
         :class="cn(props.class, {' dark:text-primary-dark text-primary-light font-bold': $page.url === props.url })"
     >

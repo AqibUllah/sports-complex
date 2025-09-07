@@ -127,7 +127,7 @@ const selectSport = (sport: string) => {
 </script>
 
 <template>
-    <section class="py-12 w-full bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white">
+    <section class="py-12 w-full bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-white" id="venues">
         <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Heading -->
             <div class="text-center mb-8">

@@ -88,7 +88,7 @@ const facilities = [
 <!--    </section>-->
 
     <!-- Booking Options Section -->
-    <section class="py-12 w-full bg-gray-800">
+    <section class="py-12 w-full bg-gray-800" id="booking_options">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Heading -->
             <div class="text-center mb-12">

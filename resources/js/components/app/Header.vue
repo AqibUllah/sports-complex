@@ -30,10 +30,13 @@ onUnmounted(() => {
 })
 
 const menus = [
-    { route: 'home', name: 'Home', url: "/" },
-    { route: 'home', name: 'Bookings', url: "/bookings" },
-    { route: 'home', name: 'About Us', url: "/about" },
-    { route: 'home', name: 'Contact Us', url: "/contact" },
+    { route: 'home', name: 'Home', url: "#home" },
+    { route: 'home', name: 'Venues', url: "#venues" },
+    { route: 'home', name: 'Features & Categories', url: "#features_and_categories" },
+    { route: 'home', name: 'Gallery', url: "#gallery" },
+    { route: 'home', name: 'Booking Options', url: "#booking_options" },
+    { route: 'home', name: 'Membership & Pricing', url: "#membership_and_pricing" },
+    { route: 'home', name: 'Faqs', url: "#faq" },
 ]
 </script>
 
