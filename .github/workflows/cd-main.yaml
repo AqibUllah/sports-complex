@@ -1,0 +1,120 @@
+name: Deployment To Production
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_CONNECTION: sqlite
+      DB_PATH: database/database.sqlite
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create SQLite database
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: gd
+
+      - name: Directory Permissions
+        run: chmod 755 -R storage bootstrap/cache
+
+      - name: Cache Composer dependencies
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        if: steps.composer-cache.outputs.cache-hit != 'true'
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+      - name: Install node dependencies
+        run: npm i
+      - name: Setup Project
+        run: |
+          npm run build
+
+      - name: Create SSH config
+        run: |
+          mkdir -p ~/.ssh
+          echo -e "Host *\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null\n" > ~/.ssh/config
+          chmod 600 ~/.ssh/config
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIAVTE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+      - name: Sync code to production server
+        run: |
+          rsync -avz --delete --exclude='storage/' -e "ssh -p ${{ secrets.PORT }}" ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/staging.uptownsportsarena.com
+
+      - name: Deploying To Production
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSH_PRIAVTE_KEY }}
+          script: |
+            cd public_html/staging.uptownsportsarena.com
+            php artisan down
+            git pull origin main
+            sed -i "s/APP_DEBUG=.*/APP_DEBUG=false" .env.example
+            sed -i "s/APP_URL=.*/APP_URL=https://hr.lodhiui.com" .env.example
+            sed -i "s/APP_ENV=.*/APP_ENV=local/" .env.example
+            sed -i "s/DB_DATABASE=.*/DB_DATABASE=u622473787_hr" .env.example
+            sed -i "s/DB_USERNAME=.*/DB_USERNAME=u622473787_hr" .env.example
+            sed -i "s/DB_PASSWORD=.*/DB_PASSWORD=Lodhiui.com256344" .env.example
+            cp .env.example .env
+            composer2 install --no-progress --prefer-dist --optimize-autoloader
+            npm install --production
+            npm run build
+            php artisan migrate --force --seed
+            php artisan storage:link
+            php artisan up
+            php artisan filament:optimize
+            php artisan filament:optimize-clear
+            php artisan key:generate
+            php artisan config:cache
+            php artisan route:cache
+            php artisan view:cache
+            php artisan config:clear
