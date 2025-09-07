@@ -5,6 +5,22 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+    optimizeDeps: {
+        // Force Vite to skip WASM files during optimization
+        exclude: ['*.wasm','problematic-wasm-library']
+    },
+    build: {
+        // Reduce chunk size
+        chunkSizeWarningLimit: 1000,
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    // Split vendor chunks
+                    vendor: ['vue'],
+                }
+            }
+        }
+    },
     plugins: [
         laravel({
             input: ['resources/js/app.ts'],
