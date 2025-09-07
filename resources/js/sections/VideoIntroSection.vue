@@ -19,7 +19,7 @@ import 'animate.css';
             </video>
             <!-- Intro Text Overlay -->
                 <div
-                    class="animate__animated animate__fadeInUp absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl my-8 p-4 sm:p-6 md:p-8 w-full max-w-sm sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto"
+                    class="animate__animated animate__fadeInUp hidden lg:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl my-8 p-4 sm:p-6 md:p-8 w-full max-w-sm sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-2xl mx-auto"
                 >
                     <!-- Heading -->
                     <h2
@@ -38,12 +38,34 @@ import 'animate.css';
                         Your ultimate destination for sports and fitness. Book facilities, join memberships, and explore our categories.
                     </p>
                     <button
-                        class="explore-btn bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br focus:ring-yellow-300 dark:focus:ring-yellow-100 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 mt-3 sm:mt-4 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-primary-dark cursor-pointer text-white rounded-md hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 text-sm sm:text-base md:text-lg"
+                        class="explore-btn bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br dark:focus:ring-yellow-100 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 mt-3 sm:mt-4 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-primary-dark cursor-pointer text-white rounded-md hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 text-sm sm:text-base md:text-lg"
                     >
                         Explore Now
                     </button>
 
                 </div>
+
+            <!-- Intro Text Overlay for sm and larger screens -->
+            <div
+                class="md:hidden block animate__animated animate__fadeInUp absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-lg border border-white/10 shadow-md rounded-xl p-1 w-11/12 sm:w-10/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-w-2xl mx-auto my-5"
+            >
+                <!-- Heading -->
+                <h2
+                    class="text-xs dark:text-white sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-gray-800 uppercase tracking-wide text-center"
+                >
+                    Welcome to
+                </h2>
+                <h1
+                    class="text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-primary-dark mt-1 sm:mt-2 text-center"
+                >
+                    Uptown Arena Sports Complex
+                </h1>
+                <p
+                    class="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base dark:text-white lg:text-lg text-gray-900 text-center"
+                >
+                    Your ultimate destination for sports and fitness. Book facilities, join memberships, and explore our categories.
+                </p>
+            </div>
         </div>
     </section>
 </template>

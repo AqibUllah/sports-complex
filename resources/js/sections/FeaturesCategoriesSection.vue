@@ -1,7 +1,5 @@
 <script setup lang="ts">
 
-import { Link } from '@inertiajs/vue3';
-
 import gymImage from '@images/categories/gym.jpg';
 import footballImage from '@images/categories/football.jpg';
 import cricketImage from '@images/categories/cricket.jpg';
@@ -11,6 +9,18 @@ import { Autoplay,EffectCoverflow,FreeMode } from 'swiper/modules';
 const modules = [Autoplay,EffectCoverflow,FreeMode]
 import 'swiper/css';
 
+const breakpoints = {
+    // when window width is <= 640px
+    0: {
+        slidesPerView: 1, // small devices
+    },
+    768: {
+        slidesPerView: 2, // optional (tablets)
+    },
+    1024: {
+        slidesPerView: 3, // larger screens
+    }
+}
 const items = [
     {
         title: 'Football',
@@ -55,12 +65,13 @@ const items = [
             <!-- Categories Grid -->
             <swiper
                 class="w-full mySwiper"
-                :slides-per-view="3"
+                :slides-per-view="1.5"
                 :rewind="true"
                 :autoplay="{
                     delay: 2500,
                     disableOnInteraction: false,
                 }"
+                :breakpoints="breakpoints"
                 :loop="true"
                 :freeMode="true"
                 :effect="'coverflow'"
