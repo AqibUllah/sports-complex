@@ -98,19 +98,13 @@ jobs:
         if: hashFiles('package.json') != ''
         run: npm run build
 
-#      - name: Prepare environment file
-#        run: |
-#          echo "${{ secrets.DEPLOYMENT_ENV_FILE }}" | base64 --decode > .env
-
       - name: Deploy to Shared Hosting
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIAVTE_KEY }}
-#          password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.PORT }}
-#          port: 22
           timeout: 60s
           script: |
             cd staging.uptownsportsarena.com
@@ -119,8 +113,8 @@ jobs:
             composer install --no-interaction --prefer-dist --optimize-autoloader
             if [ -f package.json ]; then
               npm install
-              npm run build
             fi
+            npm run build
             php artisan migrate --force
             php artisan config:clear
             php artisan cache:clear
