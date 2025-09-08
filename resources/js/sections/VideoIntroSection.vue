@@ -1,8 +1,8 @@
 
 <script setup lang="ts">
 import 'animate.css';
-
-</script>
+import { Link } from '@inertiajs/vue3';
+    </script>
 
 <template>
     <section class="relative bg-primary-50" id="home">
@@ -34,15 +34,16 @@ import 'animate.css';
                         Uptown Arena Sports Complex
                     </h1>
                     <p
-                        class="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 max-w-full sm:max-w-md md:max-w-lg"
+                        class="mt-2 mb-5 sm:mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-gray-900 max-w-full sm:max-w-md md:max-w-lg"
                     >
                         Your ultimate destination for sports and fitness. Book facilities, join memberships, and explore our categories.
                     </p>
-                    <button
+                    <Link
+                        href="#venues"
                         class="explore-btn bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-500 hover:bg-gradient-to-br dark:focus:ring-yellow-100 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 mt-3 sm:mt-4 px-3 py-1.5 sm:px-4 sm:py-2 md:px-5 md:py-2.5 bg-primary-dark cursor-pointer text-white rounded-md hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50 text-sm sm:text-base md:text-lg"
                     >
                         Explore Now
-                    </button>
+                    </Link>
 
                 </div>
 
