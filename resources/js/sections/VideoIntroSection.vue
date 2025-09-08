@@ -12,7 +12,8 @@ import 'animate.css';
                 muted
                 loop
                 playsinline
-                class="w-full h-auto rounded-md"
+                preload="none"
+                class="w-[2000px] h-auto rounded-md"
             >
                 <source src="@videos/intro-2.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
