@@ -113,7 +113,7 @@ jobs:
 #          port: 22
           timeout: 60s
           script: |
-            cd ~/home/uptolbuu/staging.uptownsportsarena.com
+            cd staging.uptownsportsarena.com
             php artisan down --message="Updating application, please wait..."
             git pull origin main
             composer install --no-interaction --prefer-dist --optimize-autoloader
