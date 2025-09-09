@@ -305,7 +305,7 @@ function calculateCustomPrice() {
                 <h3 class="text-2xl font-bold text-primary-dark mb-2">Annual Membership</h3>
                 <p class="dark:text-gray-400 mb-6">Best value for dedicated enthusiasts</p>
                 <div class="mb-6">
-                    <span class="text-4xl font-bold dark:text-white">₹{{ currentCategory.pricing.yearly }}</span>
+                    <span class="text-4xl font-bold dark:text-white">Rs {{ currentCategory.pricing.yearly }}</span>
                     <span class="text-sky-400">/year</span>
                     <p class="text-sm text-green-600 mt-2">Save {{ calculateSavings(currentCategory) }}% compared to monthly</p>
                 </div>
@@ -360,7 +360,7 @@ function calculateCustomPrice() {
 
                     <div class="mt-6 p-4 dark:bg-gray-900 rounded-lg">
                         <h4 class="font-semibold dark:text-gray-300 mb-2">Estimated Price:</h4>
-                        <div class="text-2xl font-bold dark:text-white">₹{{ calculateCustomPrice() }}/{{ customMembership.billingCycle.toLowerCase() }}</div>
+                        <div class="text-2xl font-bold dark:text-white">Rs {{ calculateCustomPrice() }}/{{ customMembership.billingCycle.toLowerCase() }}</div>
                         <p class="text-sm dark:text-gray-400 mt-2">*Final price may vary based on package combinations</p>
                     </div>
                 </div>
