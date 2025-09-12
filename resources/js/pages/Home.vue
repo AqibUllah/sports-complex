@@ -9,18 +9,25 @@ import MembershipAndPricingSection from '@/sections/MembershipAndPricingSection.
 import GallerySection from '@/sections/GallerySection.vue';
 import FAQSection from '@/sections/FAQSection.vue';
 
+const props = defineProps<{
+    categories?: object[];
+}>();
+
 </script>
 
 <template>
     <div class="flex min-h-screen flex-col items-center bg-[#FDFDFC] text-[#1b1b18] lg:justify-center dark:bg-[#0a0a0a]">
 
+        <div v-for="item in categories" :key="item">
+            {{ item }}
+        </div>
         <Header />
 
         <!-- First Section: Video Intro Section -->
         <VideoIntroSection />
 
         <!-- Second Section: Features/Categories -->
-        <FeaturesCategoriesSection />
+        <FeaturesCategoriesSection :categories="categories" />
 
         <!-- Third Section: Second Section -->
         <VenuesSection />
