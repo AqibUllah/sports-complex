@@ -18,9 +18,6 @@ const props = defineProps<{
 <template>
     <div class="flex min-h-screen flex-col items-center bg-[#FDFDFC] text-[#1b1b18] lg:justify-center dark:bg-[#0a0a0a]">
 
-        <div v-for="item in categories" :key="item">
-            {{ item }}
-        </div>
         <Header />
 
         <!-- First Section: Video Intro Section -->

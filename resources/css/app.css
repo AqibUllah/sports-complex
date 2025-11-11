@@ -2,6 +2,10 @@
 
 @import 'tw-animate-css';
 
+@import '../../../../vendor/saade/filament-laravel-log/resources/css/filament-laravel-log.css';
+
+@source '../../../../vendor/saade/filament-laravel-log/resources/views/**/*.blade.php';
+
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 

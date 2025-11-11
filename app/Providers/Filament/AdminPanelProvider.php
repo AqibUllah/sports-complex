@@ -12,6 +12,11 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
+use App\Filament\Widgets\StatsOverviewWidget;
+use App\Filament\Widgets\BookingsChart;
+use App\Filament\Widgets\FacilitiesByCategoryChart;
+use App\Filament\Widgets\RecentBookingsWidget;
+use App\Filament\Widgets\PopularFacilitiesChart;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -22,6 +27,7 @@ use Filament\Facades\Filament;
 use Filament\Navigation\NavigationGroup;
 use Filament\Navigation\NavigationItem;
 use Rupadana\ApiService\ApiServicePlugin;
+use Saade\FilamentLaravelLog\FilamentLaravelLogPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -31,18 +37,19 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->spa()
             ->sidebarCollapsibleOnDesktop()
-            ->brandName('Uptown Arena Admin')
-            ->brandLogo(asset('assets/images/logos/1.png'))
+            ->brandName('Sports Complex Admin')
             ->login()
             ->authGuard('admin')
             ->colors([
                 'primary' => Color::Amber,
             ])
             ->plugins([
-                ApiServicePlugin::make()
+                ApiServicePlugin::make(),
+                FilamentLaravelLogPlugin::make()
+                ->navigationGroup('Settings')
             ])
+            ->viteTheme('resources/css/filament/admin/theme.css')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -50,8 +57,11 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
             ->widgets([
-                AccountWidget::class,
-                FilamentInfoWidget::class,
+                StatsOverviewWidget::class,
+                BookingsChart::class,
+                FacilitiesByCategoryChart::class,
+                RecentBookingsWidget::class,
+                PopularFacilitiesChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,

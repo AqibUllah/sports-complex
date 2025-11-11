@@ -1,0 +1,401 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@import '../../../../vendor/saade/filament-laravel-log/resources/css/filament-laravel-log.css';
+
+@source '../../../../vendor/saade/filament-laravel-log/resources/views/**/*.blade.php';
+
+/* @config '../../../tailwind.config.js'; */
+
+
+.fi-main, .fi-simple-main {
+    &.fi-width-7xl {
+      max-width: var(--container-9xl);
+    }
+}
+
+/* =============================
+   Professional Admin UI Polish
+   ============================= */
+
+/* Accent palette tweaks */
+:root {
+  --brand-primary: 59 130 246; /* Tailwind blue-500 */
+  --brand-secondary: 99 102 241; /* Indigo-500 */
+  --brand-muted: 107 114 128; /* Gray-500 */
+}
+
+/* Sidebar styling */
+.fi-sidebar {
+    @apply bg-gray-50 dark:bg-gray-900;
+}
+
+.fi-sidebar-nav {
+    @apply p-4;
+}
+
+.fi-sidebar-item {
+    @apply rounded-lg mx-2 transition-all duration-300;
+}
+
+.fi-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateX(5px);
+    @apply border-l-primary-400 border-l-2;
+
+}
+
+.fi-sidebar-item-active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    @apply border-l-primary-400 border-l-2;
+}
+
+.fi-active > a{
+    @apply border-l-primary-400 border-l-2;
+
+}
+.fi-sidebar-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+/* Icon animations */
+.fi-sidebar-item-icon {
+    transition: transform 0.3s ease;
+}
+
+.fi-sidebar-item:hover .fi-sidebar-item-icon {
+    transform: scale(1.1) rotate(5deg);
+    @apply text-primary-400;
+}
+
+.fi-sidebar-nav {
+    scrollbar-width: thin;
+}
+
+/* Icon animations */
+.fi-sidebar-item-icon {
+    transition: transform 0.3s ease;
+}
+
+.fi-sidebar-item:hover .fi-sidebar-item-icon {
+    transform: scale(1.1) rotate(5deg);
+    @apply text-primary-400;
+}
+
+.fi-sidebar-nav {
+    scrollbar-width: thin;
+}
+
+.fi-dropdown-panel {
+    @apply divide-gray-200/80;
+}
+
+.fi-badge {
+    display: inline-flex;
+}
+
+/* End Alignment sortable column enhancement */
+.fi-ta-header-cell:has(button.justify-end > svg.fi-ta-header-cell-sort-icon) {
+    padding-right: 0;
+}
+
+:not(.dark) .fi-body {
+    position: relative;
+    background-color: #E8E9EB;
+    z-index: 1;
+}
+
+:not(.dark) .fi-body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(99.6deg,
+    rgba(232, 233, 235, 1) 10.6%,
+    rgba(240, 241, 243, 1) 32.9%,
+    rgba(248, 249, 251, 0.7) 50%,
+    rgba(240, 241, 243, 1) 67.1%,
+    rgba(232, 233, 235, 1) 83.4%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.fi-ta-table:has(.is-spreadsheet) {
+    .fi-ta-row {
+        @apply divide-x divide-gray-200 dark:divide-gray-700;
+    }
+
+    .fi-ta-summary-row-heading {
+        @apply px-3 py-3;
+    }
+
+    .fi-ta-text-summary {
+        @apply px-3 py-3;
+
+        > span {
+            @apply font-medium text-gray-950 dark:text-white;
+        }
+    }
+
+    .fi-ta-text {
+        @apply px-3 py-0;
+    }
+
+    .fi-ta-text-input {
+        @apply px-0 py-0;
+    }
+
+    .fi-ta-icon {
+        @apply px-3 py-0;
+    }
+
+    .fi-ta-text-input {
+        .fi-input-wrp,
+        .fi-input {
+            @apply ring-0 bg-transparent shadow-none rounded-none;
+        }
+    }
+
+    .fi-ta-cell:has(.fi-ta-text-input):focus-within {
+        outline: 2px solid #2563eb;
+        outline-offset: -2px;
+        z-index: 1;
+    }
+
+    .fi-ta-col-wrp button:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.doc-template-container {
+    color: initial;
+}
+
+.doc-template-container .overflow-x-auto,
+.doc-template-paper {
+    scrollbar-width: thin;
+}
+
+.doc-template-paper.preview {
+    zoom: 0.5;
+}
+
+@media (min-width: 1024px) {
+    .doc-template-paper.preview {
+        zoom: 0.85;
+    }
+}
+
+.doc-template-paper:not(.preview) {
+    zoom: 0.65;
+}
+
+@media (min-width: 1024px) {
+    .doc-template-paper:not(.preview) {
+        zoom: 1;
+    }
+}
+
+
+
+
+
+/* Enhanced Login Page Styles */
+.animated-gradient {
+    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+    animation: float 6s ease-in-out infinite;
+}
+
+.floating-shape:nth-child(2n) {
+    animation: floatReverse 8s ease-in-out infinite;
+}
+
+.login-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .floating-shape {
+        display: none;
+    }
+
+    .login-card {
+        backdrop-filter: blur(10px);
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .brand-text {
+        font-size: 2rem;
+    }
+
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .login-card {
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    }
+}
+
+/* Logo and Brand Animations */
+.logo-container {
+    animation: scaleIn 0.8s ease-out;
+}
+
+.brand-text {
+    animation: slideInLeft 1s ease-out;
+}
+
+.brand-subtitle {
+    animation: slideInRight 1s ease-out 0.2s both;
+}
+
+/* Interactive Elements */
+.interactive-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.interactive-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.interactive-button:hover::before {
+    left: 100%;
+}
+
+.interactive-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styling */
+.form-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    color: #1f2937;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.form-label {
+    position: absolute;
+    left: 1rem;
+    top: 0.75rem;
+    color: #6b7280;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -0.5rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    color: #667eea;
+    background: white;
+    padding: 0 0.25rem;
+}
+
+/* Keyframe definitions */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatReverse {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(20px) rotate(-5deg); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+
+/* Charts container polish */
+.filament-widgets-chart, .fi-chart, .fi-widgets {
+  border-radius: 0.75rem;
+}
+
+/* Form inputs */
+input[type='text'], input[type='email'], input[type='number'], textarea, select {
+  border-radius: 0.625rem;
+}

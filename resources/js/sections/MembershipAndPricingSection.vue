@@ -248,7 +248,7 @@ function calculateCustomPrice() {
                     <h3 class="text-2xl font-bold text-primary-dark mb-2">Per Visit Pass</h3>
                     <p class="text-gray-600 dark:text-gray-400 mb-6">Pay as you go with our flexible single-entry option</p>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-gray-800 dark:text-white">₹{{ currentCategory.pricing.perVisit }}</span>
+                        <span class="text-4xl font-bold text-gray-800 dark:text-white">Rs {{ currentCategory.pricing.perVisit }}</span>
                         <span class="text-gray-600 dark:text-sky-400">/visit</span>
                     </div>
                     <ul class="space-y-3 mb-8">
@@ -278,7 +278,7 @@ function calculateCustomPrice() {
                     <h3 class="text-2xl font-bold text-primary-dark mb-2">Monthly Membership</h3>
                     <p class="text-gray-600 mb-6 dark:text-gray-400">Perfect for regular visitors with unlimited access</p>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold dark:text-white">₹{{ currentCategory.pricing.monthly }}</span>
+                        <span class="text-4xl font-bold dark:text-white">Rs {{ currentCategory.pricing.monthly }}</span>
                         <span class="dark:text-sky-400">/month</span>
                     </div>
                     <ul class="space-y-3 mb-8">

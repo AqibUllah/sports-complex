@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
             FacilitySeeder::class,
             MembershipPlanSeeder::class,
             TimeSlotSeeder::class,
+            UserSeeder::class,
+            UserMembershipSeeder::class,
+            BookingSeeder::class,
         ]);
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c142dc864db16961fd6e4afb59f02b7",
+    "content-hash": "4ce2b92a53d5d9414330669e14cb035d",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2166,6 +2166,75 @@
                 }
             ],
             "time": "2025-08-22T14:27:06+00:00"
+        },
+        {
+            "name": "inerba/filament-db-config",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inerba/filament-db-config.git",
+                "reference": "cc30fe46cc9342f54a536c4cdb35f84f84b67fef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inerba/filament-db-config/zipball/cc30fe46cc9342f54a536c4cdb35f84f84b67fef",
+                "reference": "cc30fe46cc9342f54a536c4cdb35f84f84b67fef",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.14",
+                "orchestra/testbench": "^10.0",
+                "pestphp/pest": "^4.0",
+                "phpstan/phpstan": "^2.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "DbConfig": "Inerba\\DbConfig\\Facades\\DbConfig"
+                    },
+                    "providers": [
+                        "Inerba\\DbConfig\\DbConfigServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Inerba\\DbConfig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Francesco Apruzzese",
+                    "email": "inerba@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Filament plugin for database-backed application settings and editable content, with caching and easy page generation.",
+            "homepage": "https://github.com/inerba/filament-db-config",
+            "keywords": [
+                "filament",
+                "filament-plugin",
+                "laravel",
+                "laravel-filament"
+            ],
+            "support": {
+                "issues": "https://github.com/inerba/filament-db-config/issues",
+                "source": "https://github.com/inerba/filament-db-config"
+            },
+            "time": "2025-10-26T10:16:05+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
@@ -5599,6 +5668,82 @@
                 }
             ],
             "time": "2025-02-25T09:09:36+00:00"
+        },
+        {
+            "name": "saade/filament-laravel-log",
+            "version": "v4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saade/filament-laravel-log.git",
+                "reference": "e8203e47260de3fce75c5484e1014f4fc57adea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saade/filament-laravel-log/zipball/e8203e47260de3fce75c5484e1014f4fc57adea5",
+                "reference": "e8203e47260de3fce75c5484e1014f4fc57adea5",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "illuminate/contracts": "^11.0|^12.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.1.0",
+                "laravel/pint": "^1.0",
+                "nunomaduro/collision": "^7.0|^8.0",
+                "orchestra/testbench": "^9.0|^10.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan-deprecation-rules": "^2.0.1",
+                "phpstan/phpstan-phpunit": "^2.0.4",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Saade\\FilamentLaravelLog\\FilamentLaravelLogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Saade\\FilamentLaravelLog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saade",
+                    "email": "saade@outlook.com.br",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Access laravel.log file through Filament admin panel",
+            "homepage": "https://github.com/saade/filament-laravel-log",
+            "keywords": [
+                "filament-laravel-log",
+                "laravel",
+                "saade"
+            ],
+            "support": {
+                "issues": "https://github.com/saade/filament-laravel-log/issues",
+                "source": "https://github.com/saade/filament-laravel-log"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/saade",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-10-02T22:10:33+00:00"
         },
         {
             "name": "scrivo/highlight.php",
@@ -12470,12 +12615,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.3"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

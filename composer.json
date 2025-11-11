@@ -10,11 +10,13 @@
         "dedoc/scramble": "^0.12.31",
         "filament/filament": "^4.0",
         "filament/spatie-laravel-media-library-plugin": "^4.0",
+        "inerba/filament-db-config": "^1.2",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
         "rupadana/filament-api-service": "^4.0",
+        "saade/filament-laravel-log": "^4.0",
         "tightenco/ziggy": "^2.4"
     },
     "require-dev": {
