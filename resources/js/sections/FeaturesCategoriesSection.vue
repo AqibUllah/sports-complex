@@ -5,15 +5,10 @@ import footballImage from '@images/categories/football.jpg';
 import cricketImage from '@images/categories/cricket.jpg';
 import swimmingImage from '@images/categories/swimming.jpg';
 import { Swiper, SwiperSlide  } from 'swiper/vue';
-import NoImage from '@images/images/no-image.jpg';
 
 import { Autoplay,EffectCoverflow,FreeMode } from 'swiper/modules';
 const modules = [Autoplay,EffectCoverflow,FreeMode]
 import 'swiper/css';
-
-const props = defineProps<{
-    categories?: object[];
-}>();
 
 const breakpoints = {
     // when window width is <= 640px

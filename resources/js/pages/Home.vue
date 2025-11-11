@@ -24,7 +24,7 @@ const props = defineProps<{
         <VideoIntroSection />
 
         <!-- Second Section: Features/Categories -->
-        <FeaturesCategoriesSection :categories="categories" />
+        <FeaturesCategoriesSection :categories="props.categories" />
 
         <!-- Third Section: Second Section -->
         <VenuesSection />
