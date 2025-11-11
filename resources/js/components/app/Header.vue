@@ -71,7 +71,7 @@ const menus = [
                     </template>
                     <template v-else>
                         <Button class="bg-primary-dark cursor-pointer" size="lg" @click="$inertia.visit(route('login'))">Login</Button>
-                        <Button variant="default" class="cursor-pointer" size="lg" @click="$inertia.visit(route('register'))">Register</Button>
+                        <Button variant="default" class="cursor-pointer" size="lg" @click="$inertia.visit(route('filament.admin.pages.dashboard'))">Admin Panel</Button>
                     </template>
                 </div>
 
