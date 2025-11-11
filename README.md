@@ -17,7 +17,7 @@ Designed with scalability, performance, and simplicity in mind, this system can 
 
 ## 🌐 Live Demo
 
-🔗 **[View Demo](https://your-demo-url.com)**  
+🔗 **[View Demo](https://staging.uptownsportsarena.com)**  
 
 ---
 
