@@ -36,7 +36,7 @@ Designed with scalability, performance, and simplicity in mind, this system can 
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/AqibUllah/arena-sports-complex.git
+git clone https://github.com/AqibUllah/arean-sports-complex.git
 cd sports-complex-management
 composer install
 npm install && npm run dev
