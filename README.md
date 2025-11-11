@@ -1,9 +1,19 @@
+<p align="center">
+  <img src="public/demo.png" alt="Sports Complex Management System (Laravel + Filament)" />
+</p>
+
 # 🏟️ Sports Complex Management System (Laravel + Filament)
 
 A modern **Sports Complex Management System** built with **Laravel** and **Filament Admin Panel**.  
 This open-source project provides a complete solution for managing a sports facility — including **users, memberships, categories, facilities, time slots, gallery, logs, and site settings**.
 
 Designed with scalability, performance, and simplicity in mind, this system can be easily extended or customized for any sports management platform.
+
+<p align="center">
+  <img alt="PHP" src="https://img.shields.io/badge/PHP-^8.2-blue">
+  <img alt="Laravel" src="https://img.shields.io/badge/Laravel-12-red">
+  <img alt="Filament" src="https://img.shields.io/badge/Filament-^4.x-orange">
+</p>
 
 ---
 
